@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cronômetro simples</title>
+    <link rel="stylesheet" href="/code/styles/style.css">
 </head>
 <body>
     <header>
@@ -14,15 +15,17 @@
     <main>
         <div id="cron">
             <div id="buttons">
-                <button>Iniciar</button>
-                <button>Pausar</button>
-                <button>Parar</button>
+                <button id="iniciar">Iniciar</button>
+                <button id="pausar">Pausar</button>
+                <button id="parar">Parar</button>
             </div>
 
             <div id="temp">
-                <h1></h1>
+                <h1 id="counter">00:00:00</h1>
             </div>
         </div>
     </main>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
