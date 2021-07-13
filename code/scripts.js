@@ -7,8 +7,9 @@ const parar = document.querySelector('#parar')
 let hora = 0
 let minuto = 0
 let segundo = 0
+let milesimo = 0
 
-let tempo = 1000 // QUANTOS MILÉSIMOS VALEM 1 SEGUNDO.
+let tempo = 10 // QUANTOS MILÉSIMOS VALEM 1 SEGUNDO.
 
 let cron
 
@@ -25,24 +26,30 @@ function stop(){
     hora = 0
     minuto = 0
     segundo = 0
+    milesimo = 0
 
-    document.querySelector('#counter').innerHTML = '00:00:00'
+    document.querySelector('#counter').innerHTML = '00:00:00.00'
 }
 
 function timer(){
-    segundo++
+    milesimo++
 
-    if(segundo == 60){
-        segundo = 0
-        minuto++
+    if(milesimo == 99){
+        milesimo = 0
+        segundo++
 
-        if(minuto == 60){
-            minuto = 0
-            hora++
+        if(segundo == 60){
+            segundo = 0
+            minuto++
+
+            if(minuto == 60){
+                minuto = 0
+                hora++
+            }
         }
     }
 
-    const format = (hora < 10 ? '0' + hora : hora) + ':' + (minuto < 10 ? '0' + minuto : minuto) + ':' + (segundo < 10 ? '0' + segundo : segundo) // SE HORA(OU MINUTO/SEGUNDO) FOR MENOR QUE 10, COLOQUE UM ZERO NA FRENTE. 
+    const format = (hora < 10 ? '0' + hora : hora) + ':' + (minuto < 10 ? '0' + minuto : minuto) + ':' + (segundo < 10 ? '0' + segundo : segundo) + '.' + (milesimo < 10 ? '0' + milesimo : milesimo) // SE HORA(OU MINUTO/SEGUNDO) FOR MENOR QUE 10, COLOQUE UM ZERO NA FRENTE. 
 
     document.querySelector('#counter').innerHTML = format
 } 
