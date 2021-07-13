@@ -48,7 +48,6 @@ main{
     height: 40px;
     font-size: 18px;
     font-family: 'Titillium Web', sans-serif;
-    font-weight: 600;
     border: 1px solid rgba(0, 0, 0, 0.452);
     border-radius: 5px;
 }
